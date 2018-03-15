@@ -3,3 +3,7 @@
 ################################################################################
 
 /CrossUIBinding/bin
+/.vs/CrossUIBindingSample/v15/Server/sqlite3
+/CrossUIBinding/obj
+/CrossUIBindingSample/bin/x86/Debug
+/CrossUIBindingSample/obj
