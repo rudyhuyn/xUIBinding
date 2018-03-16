@@ -106,8 +106,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MultiViewsClone.cs" />
-    <Compile Include="MultiViewsProvider.cs" />
+    <Compile Include="CrossUIItemClone.cs" />
+    <Compile Include="CrossUIItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

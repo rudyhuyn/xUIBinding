@@ -76,6 +76,11 @@ namespace CrossUIBindingSample
         {
             ViewModel.IncrementCounterCrossUI();
         }
+
+        private void IncrementCrossUICounterManual_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.IncrementCounterCrossUIManual();
+        }
         private void IncrementCounterContainer_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.IncrementCounterContainerCrossUI();

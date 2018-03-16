@@ -19,29 +19,40 @@ namespace CrossUIBindingSample.ViewModels
         }
         #endregion
 
+        #region CrossUIBinding Manual
+        public CrossUIItem<int> CounterCrossUIManual { get; set; } = new CrossUIItem<int>(0, false);
+
+        public void IncrementCounterCrossUIManual()
+        {
+            ++CounterCrossUIManual.Clone.Value;
+            CounterCrossUIManual.RaisePropertyChanged();
+        }
+
+        #endregion
+
+
         #region CrossUIBinding
-        public CrossUIBindingProvider<int> CounterCrossUI { get; set; } = new CrossUIBindingProvider<int>(0);
+        public CrossUIItem<int> CounterCrossUI { get; set; } = new CrossUIItem<int>(0, true);
 
         public void IncrementCounterCrossUI()
         {
-            ++CounterCrossUI.Clone.Item;
+            ++CounterCrossUI.Clone.Value;
         }
 
         #endregion
 
         #region CrossIndirectUIBinding
-        public CrossUIBindingProvider<CounterContainer> CounterContainerCrossUI { get; set; } = new CrossUIBindingProvider<CounterContainer>(new CounterContainer());
+        public CrossUIItem<CounterContainer> CounterContainerCrossUI { get; set; } = new CrossUIItem<CounterContainer>(new CounterContainer(), true);
         public void IncrementCounterContainerCrossUI()
         {
-            CounterContainerCrossUI.Clone.Item = new CounterContainer() { Value = CounterContainerCrossUI.GetValue().Value + 1 };
+            CounterContainerCrossUI.Clone.Value = new CounterContainer() { Value = CounterContainerCrossUI.Value.Value + 1 };
         }
 
         #endregion
 
-        public CrossUIBindingProvider<double> CrossUISliderValue = new CrossUIBindingProvider<double>(0);
-        public CrossUIBindingProvider<bool> CrossUICheckboxValue = new CrossUIBindingProvider<bool>(false);
-        public CrossUIBindingProvider<string> CrossUITextboxValue = new CrossUIBindingProvider<string>("Nodo, Mango, Apollo");
-
+        public CrossUIItem<double> CrossUISliderValue { get; set; } = new CrossUIItem<double>(0d, true);
+        public CrossUIItem<bool> CrossUICheckboxValue { get; set; } = new CrossUIItem<bool>(false, true);
+        public CrossUIItem<string> CrossUITextboxValue { get; set; } = new CrossUIItem<string>("Nodo, Mango, Apollo", true);
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

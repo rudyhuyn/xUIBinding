@@ -34,28 +34,37 @@
                 </TextBlock>
                 <Button Content="Increment" Click="IncrementCounter_Click"/>
             </StackPanel>
-            
+
             <StackPanel Style="{StaticResource PanelStyle}">
                 <TextBlock Text="CrossUIBinding: property" Style="{StaticResource TitleTextBlock}" />
                 <TextBlock>
-                <Run Text="Counter: "/><Run Text="{x:Bind ViewModel.CounterCrossUI.Clone.Item, Mode=OneWay}"/>
+                <Run Text="Counter: "/><Run Text="{x:Bind ViewModel.CounterCrossUI.Clone.Value, Mode=OneWay}"/>
                 </TextBlock>
                 <Button Content="Increment" Click="IncrementCrossUICounter_Click"/>
+            </StackPanel>
+
+
+            <StackPanel Style="{StaticResource PanelStyle}">
+                <TextBlock Text="CrossUIBinding: property (OnPropertyChanged manual)" Style="{StaticResource TitleTextBlock}" />
+                <TextBlock>
+                <Run Text="Counter: "/><Run Text="{x:Bind ViewModel.CounterCrossUIManual.Clone.Value, Mode=OneWay}"/>
+                </TextBlock>
+                <Button Content="Increment" Click="IncrementCrossUICounterManual_Click"/>
             </StackPanel>
 
             <StackPanel Style="{StaticResource PanelStyle}">
                 <TextBlock Text="CrossUIBinding: parent of the property" Style="{StaticResource TitleTextBlock}" />
                 <TextBlock>
-                <Run Text="Counter: "/><Run Text="{x:Bind ViewModel.CounterContainerCrossUI.Clone.Item.Value, Mode=OneWay}"/>
+                <Run Text="Counter: "/><Run Text="{x:Bind ViewModel.CounterContainerCrossUI.Clone.Value.Value, Mode=OneWay}"/>
                 </TextBlock>
                 <Button Content="Increment" Click="IncrementCounterContainer_Click"/>
             </StackPanel>
 
             <StackPanel Style="{StaticResource PanelStyle}">
                 <TextBlock Text="CrossUIBinding: UI Controls" Style="{StaticResource TitleTextBlock}" />
-                <Slider Value="{x:Bind ViewModel.CrossUISliderValue.Clone.Item, Mode=TwoWay}"/>
-                <CheckBox IsChecked="{x:Bind ViewModel.CrossUICheckboxValue.Clone.Item, Mode=TwoWay}"/>
-                <TextBox Text="{x:Bind ViewModel.CrossUITextboxValue.Clone.Item, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider Value="{x:Bind ViewModel.CrossUISliderValue.Clone.Value, Mode=TwoWay}"/>
+                <CheckBox IsChecked="{x:Bind ViewModel.CrossUICheckboxValue.Clone.Value, Mode=TwoWay}"/>
+                <TextBox Text="{x:Bind ViewModel.CrossUITextboxValue.Clone.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
 
         </StackPanel>
