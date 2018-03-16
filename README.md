@@ -16,7 +16,7 @@ B will also receive the event, but because this one was launched on the UI Threa
 <img class="alignnone size-large wp-image-6884" src="http://www.rudyhuyn.com/blog/wp-content/uploads/2018/03/Capture-1024x173.png" alt="" width="640" height="108" />
 
 # Usage
-In your ViewModel, first includes:
+In your ViewModel, first include:
 `using Huyn.CrossUIBinding;`
 
 then modify the properties you want to share between windows to use:
