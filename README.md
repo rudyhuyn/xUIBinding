@@ -1,5 +1,5 @@
 # CrossUIBinding
-CrossUIBinding is a library allowing XAML/WinRT developers to use Binding on objects shared between windows.
+CrossUIBinding is a library allowing XAML/WinRT developers to use bindings (standard or native) on objects shared between windows.
 
 The idea is very simple: the same object will be shared between all windows (in memory), but each window will virtually see a different instance of the object, a kind of ghost or wrapper (named <em>Clone</em>), so if a window launches a <em>PropertyChanged</em> event, it will not make the application crashes, instead, the library will individually propagate the <em>PropertyChanged</em> event to other windows on their own UI Thread!
 
