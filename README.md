@@ -13,8 +13,7 @@ In XAML/WinRT, <strong>each window has its own UI Thread</strong>, so when the A
 
 B will also receive the event, but because this one was launched on the UI Thread of window A and not the one owned by window B, the application will crash, the same way an app crashes when you launch <em>PropertyChanged</em> on a non-UI thread.
 
-<a href="http://www.rudyhuyn.com/blog/?attachment_id=6884" rel="attachment wp-att-6884"><img class="alignnone size-large wp-image-6884" src="http://www.rudyhuyn.com/blog/wp-content/uploads/2018/03/Capture-1024x173.png" alt="" width="640" height="108" /></a>
-
+<img class="alignnone size-large wp-image-6884" src="http://www.rudyhuyn.com/blog/wp-content/uploads/2018/03/Capture-1024x173.png" alt="" width="640" height="108" />
 
 # Usage
 In your ViewModel, first includes:
@@ -57,7 +56,7 @@ If you plan to raise PropertyChanged on Count for example, you should move your 
 # How to use the sample?
 First download the sample app and click on <em>Create New Window</em> in order to create many other windows.
 
-<a href="http://www.rudyhuyn.com/blog/?attachment_id=6924" rel="attachment wp-att-6924"><img class="alignnone size-large wp-image-6924" src="http://www.rudyhuyn.com/blog/wp-content/uploads/2018/03/Capture-2-1010x1024.png" alt="" width="640" height="649" /></a>
+<img class="alignnone size-large wp-image-6924" src="http://www.rudyhuyn.com/blog/wp-content/uploads/2018/03/Capture-2-1010x1024.png" alt="" height="400" />
 
 ## Native Binding
 
