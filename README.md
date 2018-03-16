@@ -3,7 +3,10 @@ CrossUIBinding is a library allowing XAML/WinRT developers to use bindings (stan
 
 The idea is very simple: the same object will be shared between all windows (in memory), but each window will virtually see a different instance of the object, a kind of ghost or wrapper (named <em>Clone</em>), so if a window launches a <em>PropertyChanged</em> event, it will not make the application crashes, instead, the library will individually propagate the <em>PropertyChanged</em> event to other windows on their own UI Thread!
 
+<img src="https://i.imgur.com/HumEbr3.gif"/>
+
 # What do we try to solve?
+
 
 Let's imagine an application with 2 windows (A and B), each window contains a <em>TextBlock</em> element with the <em>Text</em> property binded (using standard or native binding) to the same reference: <em>Artist.FullName</em>.
 
@@ -12,6 +15,8 @@ Now let's imagine that the window A allows the user to modify the value of FullN
 In XAML/WinRT, <strong>each window has its own UI Thread</strong>, so when the A window launches <em>PropertyChanged</em>, it will launch this event on its own UI Thread and update its other bindings... but what about the window B?
 
 B will also receive the event, but because this one was launched on the UI Thread of window A and not the one owned by window B, the application will crash, the same way an app crashes when you launch <em>PropertyChanged</em> on a non-UI thread.
+
+<img src="https://i.imgur.com/usfXejH.gif" />
 
 <img class="alignnone size-large wp-image-6884" src="http://www.rudyhuyn.com/blog/wp-content/uploads/2018/03/Capture-1024x173.png" alt="" width="640" height="108" />
 
